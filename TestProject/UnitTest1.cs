@@ -12,12 +12,23 @@ namespace TestProject
         }
 
         [Test]
-        public void Test1()
+        public void SuccesfullTest()
         {
             User user = new User("test", "test");
             User storedUser = store.RegisterUser(user);
             
             Assert.AreEqual(user, storedUser);
         }
+
+        [Test]
+        public void UnSuccesfullTest()
+        {
+            User user = new User("test", "test");
+            User storedUser = store.RegisterUser(user);
+
+            Assert.AreNotEqual(user, storedUser);
+        }
+
+
     }
 }
